@@ -20,24 +20,16 @@ function __createEmails(response) {
   var emailAddress = itemResponses[0].getResponse();
 
   // getResponse returns a String[] of the choices here
-  var emailChoices = itemResponses[1].getResponse();
-
-
+  var emailChoiceStrings = itemResponses[1].getResponse();
+  var emailChoiceBools = [
+	emailChoiceStrings.includes('A one time email about the Wednesday board game nights'),
+	emailChoiceStrings.includes('A one time email about the intro to D&D event'),
+	emailChoiceStrings.includes('A one time email about the upcoming board game tournament'),
+	emailChoiceStrings.includes('Keep me in the loop about everything!'),
+  ]
+  
   var emailContents = ""; // fix
   
-  if (emailChoices.includes('A one time email about the Wednesday board game nights')) {
-	  //
-  }
-  if (emailChoices.includes('A one time email about the intro to D&D event')) {
-	  //
-  }
-  if (emailChoices.includes('A one time email about the upcoming board game tournament')) {
-	  //
-  }
-  
-  if (emailChoices.includes('Keep me in the loop about everything!')) {
-	  //
-  }
   
   //return an object with the email and content
   var returnObject = { 
